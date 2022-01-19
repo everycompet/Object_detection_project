@@ -139,7 +139,7 @@ Ref : https://www.youtube.com/watch?v=y3FkRXZqE2s 에 자세하게 설명이 나
 
 ## 7. Result 
 
-    https://user-images.githubusercontent.com/97965904/150042936-f4bc6697-a702-43a9-a3ca-36dd5a53b027.gif
+    <img width="80%" src = "https://user-images.githubusercontent.com/97965904/150042936-f4bc6697-a702-43a9-a3ca-36dd5a53b027.gif"/>
 
 
 
