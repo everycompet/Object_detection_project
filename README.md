@@ -133,10 +133,13 @@
 참고 영상
 
 Ref : https://public.roboflow.com/object-detection
+
 Ref : https://www.youtube.com/watch?v=y3FkRXZqE2s 에 자세하게 설명이 나와있음.
 
 
+## 7. Result 
 
+    ![result](https://user-images.githubusercontent.com/97965904/150042936-f4bc6697-a702-43a9-a3ca-36dd5a53b027.gif)
 
 
 
