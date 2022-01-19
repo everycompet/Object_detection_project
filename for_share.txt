@@ -1,0 +1,25 @@
+관리자모드 anaconda 프롬프트에서 가상환경 내에 ./share/yolov5 경로로 이동
+
+python detect.py --source ../dataset/video3/ --weights ./runs/train/final10/weights/best.pt
+
+--source 뒤에는 데이터파일 경로
+--weights 뒤에는 모델링한 weights 파일 경로 
+
+
+첨부한 yolov5 폴더 내부에 runs폴에로 가시면 
+train폴더랑 detect 폴더가 있는데 train폴더 내부에 final10이 최종버전이고 final10 폴더 안에 weights -> best.pt 파일이 최종 모델링된것.
+
+위의 파이썬 코드를 실행하면 detect 폴더안에 아웃풋 파일이 저장됨.
+
+
+만약 오류가 발생한다면
+
+yolov5파일 안에있는 yolov5를 실행시키기 위한 파일을 import 해줘야함.
+
+가상환경 내에 ./share/yolov5 경로에서 
+
+pip3 install --r requirements.txt 실행.
+
+
+이것마저 오류가 생기면 yolov5 깃허브에서 yolov5를 통채로 가져와야할것으로 보임.
+이걸 안하기 위해서 용량이 크더라도 제가 사용한 yolov5폴더 전체를 압축해서 첨부합니당 

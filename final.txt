@@ -1,0 +1,47 @@
+1. 가상환경 sub 사용   12분 시작.
+	필요한 import 패키지 모두 설치 완료
+	다시 트레이닝 시킬때는 무조건 requirements.txt 파일 실행해야함.
+
+2. 데이터 스플릿.
+	val을 위해서 데이터를 나눠야함. 
+	스플릿을 위한 코드는 작성해뒀음.
+
+import torchvision
+import torch
+from glob import glob
+
+img_list = glob('C:\\Users\\PC\\yolo\\dataset\\images\\*.jpg')
+print(len(img_list))
+
+from sklearn.model_selection import train_test_split
+train_img_list, val_img_list = train_test_split(img_list, test_size=0.3, random_state=2000)
+print(len(train_img_list), len(val_img_list))
+
+with open('C:\\Users\\PC\\yolo\\dataset\\train.txt', 'w') as f:
+  f.write('\n'.join(train_img_list) + '\n')
+
+with open('C:\\Users\\PC\\yolo\\dataset\\val.txt', 'w') as f:
+  f.write('\n'.join(val_img_list) + '\n')
+
+경로설정이 제일 중요함. 내가쓸 데이터와 같은 위치에 txt 파일 생성,
+	
+
+
+
+3. 트레이닝
+	트레이닝 시에는 
+python train.py --data ./data/forme.yaml  --cfg ./models/yolov5x.yaml --weights yolov5x.pt --batch 8 --worker 2 --epochs 200 --name final
+로 실행 시키면 됌.
+
+파라미터 세부조정 가능. train.py 파일 파라미터 부분 확인
+forme.yaml라는 파일을 조정해 주어야함. txt파일이 있는 경로를 잘 설정해 주어야 오류가 안남.
+
+4. 디텍션
+	python detect.py --source ../dataset/video/ --weights ./runs/train/final10/weights/best.pt
+	python detect.py --source ../dataset/video2/ --weights ./runs/train/final10/weights/best.pt
+	python detect.py --source ../dataset/video3/ --weights ./runs/train/final10/weights/best.pt
+
+
+으로 실행시키면 됌
+내가 트레이닝한 결과가 .pt 파일이고 이게 weights임.
+결과지에 어느 폴더에 가장 잘 훈련된 weights가 있는지 확인하고 위 코드 수정.

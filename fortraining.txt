@@ -1,0 +1,8 @@
+활성 루트는 yolov5 폴더!! python내부가 아니라 폴에창에서 진행!
+pip3 install -r requirements.txt 실행!!!!
+
+
+
+python train.py --data ./data/forme.yaml  --cfg ./models/yolov5x.yaml --weights yolov5x.pt --batch 8 --worker 2 --epochs 200 --name final
+
+python detect.py --source ../dataset/video/ --weights ./runs/train/Detect_Car7/weights/best.pt
